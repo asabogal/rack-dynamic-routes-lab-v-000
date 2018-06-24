@@ -13,7 +13,7 @@ class Application
 
     elsif !@@items.include?(item)
       resp.write "Item not found"
-      resp.status = 404
+      resp.status = 400
 
 
     end
