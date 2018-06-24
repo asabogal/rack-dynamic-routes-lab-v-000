@@ -10,6 +10,12 @@ class Application
       item_name = req.path.split("/items/").last
       item = @@items.find{|i| i.title == item_name}
       resp.write item.price
+
+    elsif !@@items.include?(item)
+      resp.write "Item not found"
+      resp.status = 404
+
+
     end
   end
 
